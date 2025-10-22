@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="flex flex-row w-full items-center justify-between p-4 bg-[#652b5b] text-white border-b-2 border-[#6c33a0] shadow-lg max-sm:flex-col max-sm:items-start transition-all duration-300">
+    <header class="flex flex-row w-full items-center justify-between p-4 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-white border-b-2 border-[#8858b5] shadow-lg max-sm:flex-col max-sm:items-start transition-all duration-300">
       <div class="flex basis-1/4 items-center justify-start px-8 min-w-40 max-sm:basis-auto max-sm:px-0 max-sm:w-full max-sm:justify-between">
         <img src="assets/img/spyder_logo.jpg" alt="Logo" class="w-16 h-16 rounded-full border-2 border-white shadow-md" />
         <div class="sm:hidden cursor-pointer" @click="switchBurger">
@@ -63,15 +63,28 @@
     </nav>
 
     
-    <main class="p-8 max-sm:p-4 h-screen bg-gray-50">
+    <main class="p-8 max-sm:p-4 h-screen bg-purple-400">
       <slot />
     </main>
 
     
-    <footer class="flex flex-row w-full bg-[#8842c1] text-white border-t-2 border-[#6c33a0] items-center px-4 py-3 gap-4 justify-center">
-      <a href="#"><img src="https://www.google.com/favicon.ico" class="w-6 h-6 invert" /></a>
-      <a href="#"><img src="https://github.com/favicon.ico" class="w-6 h-6 invert" /></a>
-      <a href="#"><img src="https://netlify.com/favicon.ico" class="w-6 h-6 invert" /></a>
+     <footer
+      class="flex flex-wrap w-full bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-white border-t-2 border-[#8858b5] items-center justify-center px-4 py-3 gap-6 text-sm sm:text-base transition-all duration-300">
+      <a href="#" class="hover:scale-110 transition-transform duration-200" title="Google"
+      >
+        <img src="https://www.google.com/favicon.ico" class="w-6 h-6 invert" />
+      </a>
+      <a href="#" class="hover:scale-110 transition-transform duration-200" title="GitHub"
+      >
+        <img src="https://github.com/favicon.ico" class="w-6 h-6 invert" />
+      </a>
+      <a
+        href="#"
+        class="hover:scale-110 transition-transform duration-200"
+        title="Netlify"
+      >
+        <img src="https://netlify.com/favicon.ico" class="w-6 h-6 invert" />
+      </a>
     </footer>
   </div>
 </template>
@@ -89,4 +102,22 @@ const toggleLabs = () => {
 const switchBurger = () => {
   burger.value = !burger.value;
 };
+
+useHead({
+  script: [
+    {
+      src: "https://www.googletagmanager.com/gtag/js?id=G-RES3C5BQ23",
+      async: true
+    },
+    {
+      children: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RES3C5BQ23');
+      `,
+      type: "text/javascript"
+    }
+  ]
+})
 </script>
