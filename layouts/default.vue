@@ -63,7 +63,9 @@
     </nav>
 
     
-    <main class="p-8 max-sm:p-4 h-screen bg-purple-400">
+   
+
+    <main class="flex-grow p-8 max-sm:p-4 bg-purple-400">
       <slot />
     </main>
 

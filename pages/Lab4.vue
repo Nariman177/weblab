@@ -23,7 +23,7 @@ const pictures = reactive([
   { src: lap1, title: 'Laptop1', category: 'laptop' },
   { src: lap3, title: 'Laptop2', category: 'laptop' },
   { src: lap4, title: 'Laptop3', category: 'laptop' },
-  { src: lap5, title: 'Laptop5', category: 'phone' },
+  { src: lap5, title: 'Laptop5', category: 'laptop' },
   { src: phone3, title: 'phone3', category: 'phone' },
   { src: lap6, title: 'Laptop6', category: 'laptop' },
   { src: lap7, title: 'Laptop7', category: 'laptop' },
@@ -37,7 +37,7 @@ const pictures = reactive([
 </script>
 
 <template>
-  <main class="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 flex-col items-center py-10 text-white">
+  <main class="text-white">
     
     
     <h1 class="text-4xl font-bold mb-6 drop-shadow-lg">🌄 My Photo Gallery about electronic</h1>
@@ -47,7 +47,6 @@ const pictures = reactive([
       <label><input type="radio" value="all" v-model="selected" class="mr-2" /> All</label>
       <label><input type="radio" value="laptop" v-model="selected" class="mr-2" /> laptop</label>
       <label><input type="radio" value="phone" v-model="selected" class="mr-2" /> phone</label>
-      <label><input type="radio" value="other" v-model="selected" class="mr-2" /> other</label>
     </div>
 
     
